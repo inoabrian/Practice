@@ -5,7 +5,7 @@ export class Compare<T> {
         this._type = typeof t;
     }
 
-    compare(a: T, b: T) {
+    compare(a: T, b: T):number {
         switch(this._type) {
             case 'string':
                 return this.compareString(a.toString(), b.toString());
@@ -25,6 +25,7 @@ export class Compare<T> {
     }
 
     private compareObject(a: Object, b: Object) {
-        throw new Error("Not yet implemented!");
+        return -1;
+        // throw new Error("Not yet implemented!");
     }
 }

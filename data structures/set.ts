@@ -3,7 +3,7 @@ import { Iterator } from './iterator';
 
 class SetIterator implements Iterator<{}> {
     begin(): any {
-
+        
     }
 
     end(): any {
