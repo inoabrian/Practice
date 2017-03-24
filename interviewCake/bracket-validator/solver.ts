@@ -21,15 +21,15 @@ class Solver {
                 brackets.push(tokens[i]);
             } else {
                 if(tokens[i] === ']') {
-                    if(tokens.indexOf(']') != -1 && tokens.indexOf(']') === tokens.length -1) {
+                    if(tokens.indexOf('[') != -1 && tokens.indexOf('[') === tokens.length -1) {
                         tokens.pop();
                     }
                 } else if(tokens[i] === '}') {
-                    if(tokens.indexOf('}') != -1 && tokens.indexOf('}') === tokens.length -1) {
+                    if(tokens.indexOf('{') != -1 && tokens.indexOf('{') === tokens.length -1) {
                         tokens.pop();
                     }
                 } else if(tokens[i] === ')') {
-                    if(tokens.indexOf(')') != -1 && tokens.indexOf(')') === tokens.length -1) {
+                    if(tokens.indexOf('(') != -1 && tokens.indexOf('(') === tokens.length -1) {
                         tokens.pop();
                     }
                 }
