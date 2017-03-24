@@ -9,3 +9,37 @@
     ')', '}', ']' are called "closers."
     Write an efficient function that tells us whether or not an input string's openers and closers are properly nested.
 */
+
+class Solver {
+    constructor() {}
+
+    solve(data: string): boolean {
+        let tokens = data.split('');
+        let brackets = [];
+        for(let i = 0; i < tokens.length; i++) {
+            if(tokens[i] === '[' || tokens[i] === '{' || tokens[i] === '(') {
+                brackets.push(tokens[i]);
+            } else {
+                if(tokens[i] === ']') {
+                    if(tokens.indexOf(']') != -1 && tokens.indexOf(']') === tokens.length -1) {
+                        tokens.pop();
+                    }
+                } else if(tokens[i] === '}') {
+                    if(tokens.indexOf('}') != -1 && tokens.indexOf('}') === tokens.length -1) {
+                        tokens.pop();
+                    }
+                } else if(tokens[i] === ')') {
+                    if(tokens.indexOf(')') != -1 && tokens.indexOf(')') === tokens.length -1) {
+                        tokens.pop();
+                    }
+                }
+            }
+        }
+
+        if(tokens.length > 0) { 
+            return false;
+        }
+
+        return true;
+    }
+}
