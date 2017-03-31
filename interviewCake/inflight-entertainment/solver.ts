@@ -10,3 +10,7 @@
   Optimize for runtime over memory
   
 */
+
+// IDEA : I would sort the list of durations and index [i][i+1] to see if they are 
+// if [i][i+1] > FLIGHT_DURATION 
+//    return [i-1][i]
