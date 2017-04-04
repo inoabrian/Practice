@@ -11,6 +11,27 @@
   
 */
 
-// IDEA : I would sort the list of durations and index [i][i+1] to see if they are 
-// if [i][i+1] > FLIGHT_DURATION 
-//    return [i-1][i]
+class Solver {
+  private preferredDuration: number;
+  private durationList: Array<number>;
+  constructor(duration: number, movieDurations: Array<number>){ 
+    this.preferredDuration = duration;
+    this.durationList = movieDurations;
+  }
+  
+  solve(): Array<number> {
+    // IDEA : I would sort the list of durations and index [i][i+1] to see if they are 
+    // if [i][i+1] > FLIGHT_DURATION 
+    //    return [i-1][i]
+    let answerIndex: Array<number> = [];
+    this.durationList = this.durationList.sort();
+    
+    for(let i = 0; i < this.durationList.length - 2; i++) {
+      if(this.durationList[i] + this.durationList[i + 1] <= this.preferredDuration) {
+        answerIndex[0] = this.durationList[i];
+        answerIndex[1] = this.durationList[i + 1];
+      }
+    }
+    return answerIndex;
+  }
+}
