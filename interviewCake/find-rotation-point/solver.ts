@@ -4,4 +4,12 @@
     This list is huge (there are lots of words I don't know) so we want to be efficient here.
  */
 
-class Solver {}
+class Solver {
+    constructor() {
+
+    }
+
+    solve() {
+        
+    }
+}
